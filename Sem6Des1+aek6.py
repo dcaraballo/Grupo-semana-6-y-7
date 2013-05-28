@@ -1,6 +1,6 @@
 #! /usr/bin/env python3.3
 #la version alpha, falta ver que se puede mejorar
-def creaDiseño():
+def creaDisenio():
 	'''Permite crear diseños a partir de patrones
 	y desplazamientos'''
 	capas = int(input("¿Cuantas capas tendra el diseño?: "))
@@ -8,14 +8,14 @@ def creaDiseño():
 	serie = ""
 	for i in range(ancho):
 		serie += str((i+1)%10)
-	diseño = []
+	disenio = []
 	despla = []
 	posicion = []
 	for i in range( capas ):
 		print("Introdusca el diseño de la capa", i,":")
 		print(serie)
 		print("|", " " * (ancho - 4), "|")
-		diseño.append(input(""))
+		disenio.append(input(""))
 		despla.append(input("¿Cual sera el desplazamiento de esta capa (-1, 0, 1)?: "))
 		print("")
 		posicion.append(0)
@@ -25,8 +25,8 @@ def creaDiseño():
 		linea = ((" ," * (ancho - 1)) + " ").split(",")
 		for l in range(capas):		
 			for c in range(ancho):
-				if diseño[l][c] != " ":
-					linea[c+posicion[l]-ancho] = diseño[l][c]
+				if disenio[l][c] != " ":
+					linea[c+posicion[l]-ancho] = disenio[l][c]
 			posicion[l] += int(despla[l])
 			if posicion[l] == ancho:
 				posicion[l] = 0;
@@ -35,4 +35,4 @@ def creaDiseño():
 		print("".join(linea))
 	
 					
-creaDiseño()
+creaDisenio()
